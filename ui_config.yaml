@@ -2,16 +2,22 @@
 
 # This file controls the content and appearance of the Streamlit UI.
 
-welcome_message: "Hello! How can I help you find information in your documents today?"
+welcome_message: "Hello! I have knowledge from 67 document chunks. How can I help you today?"
 
 # The list of example questions that will be displayed as clickable buttons.
-# Each question has a short 'title' for the button and the full 'query' to be executed.
+# These questions are tailored to the documents currently in the vector database.
 example_questions:
-  - title: "Purpose of the Esketamine Meeting"
-    query: "What was the stated 'Purpose of meeting' in the Esketamine Stakeholder Meeting Outcome Statement?"
+  - title: "Purpose of the 2018 Pricing Forum"
+    query: "What was the main purpose of the PBS Pricing Forum held in December 2018?"
   
-  - title: "Process for Major Submissions"
-    query: "Across the various PBAC agendas provided, what is the general process or format for a major submission?"
+  - title: "Implications for F1 Medicines"
+    query: "What are the implications for a manufacturer with an F1 medicine that has a Special Pricing Arrangement (SPA)?"
 
-  - title: "Information on Alzheimer's"
-    query: "Is there any information on the treatment of Alzheimer's disease in the provided documents?"
+  - title: "New Presentation Rules"
+    query: "According to the PBS Pricing Forum of December 2018, what is the rule for a 'new presentation exemption'?"
+  
+  - title: "April 2025 Price Report"
+    query: "What kind of information is contained in the '2025 April PD cycle - Confirmed prices report'?"
+    
+  - title: "Information on Bortezomib"
+    query: "Is there any pricing information for the drug Bortezomib in the provided documents?"
