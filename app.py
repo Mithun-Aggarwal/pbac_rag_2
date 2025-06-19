@@ -1,5 +1,6 @@
 # app.py
 
+# Final deployment test - v2
 # --- Hot-patch for sqlite3 version on Streamlit Cloud ---
 import sys
 import sqlite3
