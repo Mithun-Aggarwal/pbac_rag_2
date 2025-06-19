@@ -1,0 +1,17 @@
+# ui_config.yaml
+
+# This file controls the content and appearance of the Streamlit UI.
+
+welcome_message: "Hello! How can I help you find information in your documents today?"
+
+# The list of example questions that will be displayed as clickable buttons.
+# Each question has a short 'title' for the button and the full 'query' to be executed.
+example_questions:
+  - title: "Purpose of the Esketamine Meeting"
+    query: "What was the stated 'Purpose of meeting' in the Esketamine Stakeholder Meeting Outcome Statement?"
+  
+  - title: "Process for Major Submissions"
+    query: "Across the various PBAC agendas provided, what is the general process or format for a major submission?"
+
+  - title: "Information on Alzheimer's"
+    query: "Is there any information on the treatment of Alzheimer's disease in the provided documents?"

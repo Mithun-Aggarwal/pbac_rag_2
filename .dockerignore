@@ -1,0 +1,45 @@
+# .dockerignore
+
+# --- Python & Virtual Environment ---
+# Exclude the entire local virtual environment folder. The container will build its own.
+# This is the most important line in this file.
+.venv/
+venv/
+env/
+
+# Exclude other folder
+additional_info/
+
+# Exclude Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Local Data, Logs, and Outputs ---
+# These folders will be mounted as volumes later, not copied into the image.
+# This ensures data and logs persist even if the container is deleted.
+documents/output_folder/
+logs/
+.cache/
+
+# --- IDE & OS specific files ---
+# Exclude editor-specific settings and OS junk files.
+.vscode/
+.idea/
+.DS_Store
+
+# --- Sensitive Information ---
+# Exclude the .env file. Secrets should be passed as environment variables.
+.env
+
+# --- Git ---
+# Exclude the git history and attributes.
+.git/
+.gitignore
+
+# --- Docker ---
+# Don't copy the Docker files themselves into the image.
+Dockerfile
+docker-compose.yml
+.dockerignore

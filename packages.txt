@@ -1,0 +1,4 @@
+build-essential
+swig
+libjpeg-dev
+zlib1g-dev

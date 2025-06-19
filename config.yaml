@@ -1,0 +1,66 @@
+# config.yaml
+
+# === Path Configuration ===
+paths:
+  # All paths are now relative to the project root, which is /app inside the container
+  input: "documents/input_folder/industry/"
+  output_base: "output_folder"
+  raw_json: "{paths.output_base}/1_raw_json"
+  validated_json: "{paths.output_base}/2_validated_json"
+  embeddings: "{paths.output_base}/3_embeddings"
+  vector_store: "{paths.output_base}/4_vector_store"
+  reports: "{paths.output_base}/_reports"
+  logs: "logs"
+  cache: "{paths.output_base}/.cache"
+
+
+# === Pipeline Execution Settings ===
+# Set to 1 to start, can be increased for local models
+max_threads: 1
+force_refresh: false
+
+
+# === Document Processing Settings ===
+supported_formats:
+  - pdf
+processing:
+  pdf_page_limit: 150 # For splitting very large PDFs
+
+
+# === EXTRACTION PROVIDER SELECTION ===
+extraction:
+  # Choose your provider: "gemini" or "local"
+  provider: "gemini"
+
+  # Settings for local extraction via Ollama
+  local:
+    # The model you have installed (e.g., llama3:latest)
+    model: "llama3:latest"
+    # The URL for your local Ollama API server
+    ollama_url: "http://localhost:11434/api/chat"
+    # Timeout in seconds for requests to the local model
+    request_timeout: 120
+
+  # Settings for Gemini API extraction
+  gemini:
+    model: "gemini-1.5-flash-latest" # Using the model with broadest file support
+    max_output_tokens: 8192
+    request_timeout: 120
+
+
+# === Embedding & Chunking Configuration ===
+embedding:
+  provider: "gemini"
+  ollama:
+    model: "nomic-embed-text"
+    url: "http://localhost:11434/api/embeddings"
+  gemini:
+    model: "models/text-embedding-004"
+  chunking:
+    size: 400
+    overlap: 100
+
+
+# === Vector Store Configuration ===
+vector_db:
+  collection_name: "pbac_documents"

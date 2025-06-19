@@ -1,0 +1,27 @@
+# .gitignore
+
+# Python & System Files
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+
+# Ignore Source Documents & Intermediate Data
+# We only want the final vector store, not the raw materials.
+documents/
+logs/
+additional_info/
+tmp/
+home/
+Compare/
+
+# Ignore all pipeline output EXCEPT the final database
+output_folder/1_raw_json/
+output_folder/2_validated_json/
+output_folder/3_embeddings/
+output_folder/_reports/
+output_folder/0_split_pdfs_cache/
+
+# Credentials
+.env
